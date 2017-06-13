@@ -1,0 +1,49 @@
+- name: install supervisor
+  pip:
+    name: supervisor
+    version: "{{ version }}"
+    executable: "{{ pip_exe }}"
+    state: present
+
+
+- name: link to /usr/local/bin/supervisorctl
+  file:
+    src: "{{ supervisorctl_exe }}"
+    dest: /usr/local/bin/supervisorctl
+    state: link
+    force: yes
+
+
+- name: link to /usr/local/bin/supervisord
+  file:
+    src: "{{ supervisord_exe }}"
+    dest: /usr/local/bin/supervisord
+    state: link
+    force: yes
+
+
+- name: mkdir /etc/supervisord
+  file:
+    path: /etc/supervisord
+    state: directory
+    mode: 755
+
+
+- name: Copy /etc/supervisord.conf
+  copy:
+    src: files/etc/supervisord.conf
+    dest: /etc/supervisord.conf
+    owner: root
+    group: root
+    mode: 644
+
+
+- name: Copy init script
+  copy:
+    src: files/etc/init.d/supervisord
+    dest: /etc/init.d/supervisord
+    owner: root
+    group: root
+    mode: "u=rwx,g=rx,o=rx"
+  tags:
+    update_config
