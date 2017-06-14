@@ -1,5 +1,6 @@
 
 [![Ansible Role](https://img.shields.io/badge/role-cupen.supervisor-brightgreen.svg)](https://galaxy.ansible.com/cupen/supervisor/)
+
 Supervisor
 =========
 
@@ -57,6 +58,8 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 Author Information
 ------------------
 
-cupen@foxmail.com
+智慧与美貌的并重，英雄与侠义的化身！
+
+<cupen@foxmail.com>
 
 [supervisor]: http://supervisord.org/

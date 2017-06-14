@@ -1,6 +1,6 @@
 galaxy_info:
   author: cupen
-  description: a man
+  description: Install supervisor by python2.7 with pip2.7.
   company: freer
   license: WTFPL
   min_ansible_version: 2.0
@@ -10,8 +10,13 @@ galaxy_info:
      versions:
      - 5
      - 6
+     - 7
+
+   - name: Debian
+     version:
+     - etch
 
   galaxy_tags: [python, supervisor, daemon]
 
 dependencies:
-  - { role: cupen.python, version: '2.7.13', python_dir: '/usr/local/opt/python{{ version }}'}
+  - { role: cupen.python, version: '2.7.13', python_dir: '/usr/local/opt/python{{ version }}', link: false, reinstall: false }
