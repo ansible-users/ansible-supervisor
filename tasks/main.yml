@@ -2,13 +2,17 @@
 # tasks file for supervisor
 - name: check status of pip-{{ version }}.
   stat:
-    path: "/usr/local/bin/supervisorctl"
-  register: supervisorctl
+    path: "/usr/local/bin/supervisord"
+  register: supervisor
 
 # - debug: var=supervisorctl.stat
 
 - include: install-supervisor.yml
   static: no
-  when: supervisorctl.stat.exists == False or supervisorctl.stat.executable == False
+  when: supervisor.stat.exists == False or supervisor.stat.executable == False
+
+- name: Failed.
+  debug: msg="Already exists a supervisor in '/usr/local/bin/supervisord'"
+  when: supervisor.stat.exists == True and supervisor.stat.executable == True
 
 - service: name=supervisord enabled=yes state=started

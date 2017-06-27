@@ -1,4 +1,4 @@
-- name: install supervisor
+- name: Install supervisor-{{ version }} by {{ pip_exe }}.
   pip:
     name: supervisor
     version: "{{ version }}"
@@ -6,7 +6,7 @@
     state: present
 
 
-- name: link to /usr/local/bin/supervisorctl
+- name: Link to /usr/local/bin/supervisorctl
   file:
     src: "{{ supervisorctl_exe }}"
     dest: /usr/local/bin/supervisorctl
@@ -14,7 +14,7 @@
     force: yes
 
 
-- name: link to /usr/local/bin/supervisord
+- name: Link to /usr/local/bin/supervisord
   file:
     src: "{{ supervisord_exe }}"
     dest: /usr/local/bin/supervisord
@@ -22,7 +22,7 @@
     force: yes
 
 
-- name: mkdir /etc/supervisord
+- name: Yeah! mkdir /etc/supervisord
   file:
     path: /etc/supervisord
     state: directory

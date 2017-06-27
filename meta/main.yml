@@ -14,7 +14,7 @@ galaxy_info:
 
    - name: Debian
      version:
-     - etch
+     - all
 
   galaxy_tags: [python, supervisor, daemon]
 
