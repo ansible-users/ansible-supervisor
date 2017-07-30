@@ -1,5 +1,5 @@
 ---
 - hosts: localhost
-  remote_user: root
+  connection: paramiko
   roles:
-    - supervisor
+    - { role: "supervisor",  version: "3.3.3", pip_index_url: "https://pypi.tuna.tsinghua.edu.cn/simple" }

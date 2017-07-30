@@ -1,6 +1,6 @@
 ---
 # tasks file for supervisor
-- name: check status of pip-{{ version }}.
+- name: Check status of supervisor-{{ version }}.
   stat:
     path: "/usr/local/bin/supervisord"
   register: supervisor
@@ -11,7 +11,7 @@
   static: no
   when: supervisor.stat.exists == False or supervisor.stat.executable == False
 
-- name: Failed.
+- name: Already exists supervisor-{{ version }}.
   debug: msg="Already exists a supervisor in '/usr/local/bin/supervisord'"
   when: supervisor.stat.exists == True and supervisor.stat.executable == True
 

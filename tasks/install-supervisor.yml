@@ -4,6 +4,7 @@
     version: "{{ version }}"
     executable: "{{ pip_exe }}"
     state: present
+    extra_args: --index-url={{ pip_index_url }}
 
 
 - name: Link to /usr/local/bin/supervisorctl
@@ -22,7 +23,7 @@
     force: yes
 
 
-- name: Yeah! mkdir /etc/supervisord
+- name: Mkdir /etc/supervisord
   file:
     path: /etc/supervisord
     state: directory

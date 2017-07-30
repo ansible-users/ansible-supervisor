@@ -15,26 +15,29 @@
 #                   made the script "simple customizable".
 #               Brendan Maguire <maguire.brendan@gmail.com> Added OPTIONS to
 #                   SUPERVISORCTL status call
+#               Cupen Noruler <cupen@foxmail.com> Adjusted compatible with
+#                   non-redhat system. Added -j PIDFILE in OPTIONS.
 #
-. /etc/rc.d/init.d/functions
+#
+
+# It's not compatible with non-redhat system.
+# . /etc/rc.d/init.d/functions
 set -a
 
 PREFIX=/usr/local
 SUPERVISORD=$PREFIX/bin/supervisord
 SUPERVISORCTL=$PREFIX/bin/supervisorctl
-
 PIDFILE=/var/run/supervisord.pid
-# PIDFILE=/tmp/supervisord.pid
 LOCKFILE=/var/lock/subsys/supervisord
+CONFIGFILE=/etc/supervisord.conf
 
-OPTIONS="-c /etc/supervisord.conf"
+OPTIONS="-c $CONFIGFILE --j $PIDFILE"
 
 # unset this variable if you don't care to wait for child processes to shutdown before removing the $LOCKFILE-lock
 WAIT_FOR_SUBPROCESSES=yes
 
 # remove this if you manage number of open files in some other fashion
 ulimit -n 96000
-
 RETVAL=0
 
 running_pid() {
