@@ -31,7 +31,7 @@ PIDFILE=/var/run/supervisord.pid
 LOCKFILE=/var/lock/subsys/supervisord
 CONFIGFILE=/etc/supervisord.conf
 
-OPTIONS="-c $CONFIGFILE --j $PIDFILE"
+OPTIONS="-c $CONFIGFILE"
 
 # unset this variable if you don't care to wait for child processes to shutdown before removing the $LOCKFILE-lock
 WAIT_FOR_SUBPROCESSES=yes
