@@ -1,5 +1,5 @@
 
-[![Ansible Role](https://img.shields.io/badge/role-cupen.supervisor-brightgreen.svg)](https://galaxy.ansible.com/cupen/supervisor/)
+[![Ansible Role](https://img.shields.io/badge/role-ansible-users.supervisor-brightgreen.svg)](https://galaxy.ansible.com/ansible-users/supervisor/)
 
 Supervisor
 =========
@@ -31,7 +31,7 @@ Install supervisor with python2.7 which installed in `python_dir`
 ```yaml
 - hosts: servers
   roles:
-     - { role: cupen.supervisor, version: '3.3.2', python_dir: '/usr/local/opt/python2.7.13' }
+     - { role: cupen.supervisor, version: '3.3.3', python_dir: '/usr/local/opt/python2.7.14' }
 ```
 
 License
@@ -43,7 +43,7 @@ WTFPL
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
            Version 2, December 2004
 
-Copyright (C) 2017 cupen <cupen@foxmail.com>
+Copyright (C) 2017-2018 cupen <cupen@foxmail.com>
 
 Everyone is permitted to copy and distribute verbatim or modified
 copies of this license document, and changing it is allowed as long
