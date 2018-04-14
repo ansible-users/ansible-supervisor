@@ -1,5 +1,6 @@
 
-[![Ansible Role](https://img.shields.io/badge/role-ansible-users.supervisor-brightgreen.svg)](https://galaxy.ansible.com/ansible-users/supervisor/)
+[![Ansible Role](https://img.shields.io/ansible/role/19821.svg)][galaxy]
+[![Ansible Role](https://img.shields.io/ansible/role/d/19821.svg)][galaxy]
 
 Supervisor
 =========
@@ -9,7 +10,7 @@ Install [supervisor] by pip.
 Requirements
 ------------
 
-* `ansible`
+* `ansible` >= 2.0
 
 Role Variables
 --------------
@@ -43,7 +44,7 @@ WTFPL
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
            Version 2, December 2004
 
-Copyright (C) 2017-2018 cupen <cupen@foxmail.com>
+Copyright (C) 2017-2018 cupen <xcupen@gmail.com>
 
 Everyone is permitted to copy and distribute verbatim or modified
 copies of this license document, and changing it is allowed as long
@@ -60,6 +61,6 @@ Author Information
 
 智慧与美貌的并重，英雄与侠义的化身！
 
-<cupen@foxmail.com>
 
 [supervisor]: http://supervisord.org/
+[galaxy]: https://galaxy.ansible.com/ansible-users/supervisor/
