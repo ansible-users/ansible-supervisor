@@ -17,6 +17,3 @@ galaxy_info:
      - all
 
   galaxy_tags: [python, supervisor, daemon]
-
-dependencies:
-  - { role: ansible-users.python, version: '2.7.14', python_dir: '/usr/local/opt/python{{ version }}', link: false, reinstall: false }

@@ -2,7 +2,7 @@
 # defaults file for supervisor
 version: '3.3.1'
 python_dir: '/usr/local/opt/python2.7.13'
-pip_exe: '{{ python_dir }}/bin/pip2.7'
+pip_exe: '{{ python_dir }}/bin/pip'
 supervisorctl_exe: '{{ python_dir }}/bin/supervisorctl'
 supervisord_exe: '{{ python_dir }}/bin/supervisord'
 pip_index_url: https://pypi.python.org/simple
