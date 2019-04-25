@@ -15,7 +15,7 @@
 #                   made the script "simple customizable".
 #               Brendan Maguire <maguire.brendan@gmail.com> Added OPTIONS to
 #                   SUPERVISORCTL status call
-#               Cupen Noruler <cupen@foxmail.com> Adjusted compatible with
+#               Cupen Noruler <xcupen@gmail.com> Adjusted compatible with
 #                   non-redhat system. Added -j PIDFILE in OPTIONS.
 #
 #

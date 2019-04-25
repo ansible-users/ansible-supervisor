@@ -30,6 +30,13 @@
     mode: 755
 
 
+- name: Mkdir /etc/supervisor.d
+  file:
+    path: /etc/supervisor.d
+    state: directory
+    mode: 755
+
+
 - name: Copy /etc/supervisord.conf
   copy:
     src: files/etc/supervisord.conf
