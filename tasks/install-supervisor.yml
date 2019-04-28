@@ -23,18 +23,15 @@
     force: yes
 
 
-- name: Mkdir /etc/supervisord
+- name: Mkdir {{ item }}
   file:
-    path: /etc/supervisord
+    path: "{{ item }}"
     state: directory
     mode: 755
-
-
-- name: Mkdir /etc/supervisor.d
-  file:
-    path: /etc/supervisor.d
-    state: directory
-    mode: 755
+  loops:
+    - /etc/supervisord
+    - /etc/supervisord.d
+    - /etc/supervisor.d
 
 
 - name: Copy /etc/supervisord.conf
