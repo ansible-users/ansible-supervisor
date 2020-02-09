@@ -28,10 +28,10 @@
     path: "{{ item }}"
     state: directory
     mode: 755
-  loops:
-    - /etc/supervisord
-    - /etc/supervisord.d
-    - /etc/supervisor.d
+  loop:
+    - "/etc/supervisord"
+    - "/etc/supervisord.d"
+    - "/etc/supervisor.d"
 
 
 - name: Copy /etc/supervisord.conf
