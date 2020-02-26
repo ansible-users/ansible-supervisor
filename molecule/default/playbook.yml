@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: supervisor
+    - { role: supervisor, version: '4.1.0', python_dir: '/usr/local/opt/python3.6.8' }

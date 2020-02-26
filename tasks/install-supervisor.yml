@@ -23,7 +23,7 @@
     force: yes
 
 
-- name: Mkdir {{ item }}
+- name: Initializing config directories
   file:
     path: "{{ item }}"
     state: directory
