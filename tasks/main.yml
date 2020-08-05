@@ -9,10 +9,11 @@
 
 - include: install-supervisor.yml
   static: no
-  when: supervisor.stat.exists == False or supervisor.stat.executable == False
+  when: not supervisor.stat.exists or not supervisor.stat.executable
 
 - name: Already exists supervisor-{{ version }}.
   debug: msg="Already exists a supervisor in '/usr/local/bin/supervisord'"
-  when: supervisor.stat.exists == True and supervisor.stat.executable == True
+  when: supervisor.stat.exists and supervisor.stat.executable
 
-- service: name=supervisord enabled=yes state=started
+- name: Starting supervisor-{{ version }}.
+  service: name=supervisord enabled=yes state=started

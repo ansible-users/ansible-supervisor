@@ -3,16 +3,16 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
 platforms:
-  - name: instance
+  - name: centos7
     image: centos:7
+  - name: debian9
+    image: debian:9
 provisioner:
   name: ansible
   lint:
     name: ansible-lint
 verifier:
-  name: testinfra
-  lint:
-    name: flake8
+  name: ansible
+lint: |
+  ansible-lint
