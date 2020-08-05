@@ -1,0 +1,9 @@
+- name: Installing service script({{ ansible_service_mgr }}).
+  copy:
+    src: "files/{{ init_script[ansible_service_mgr] }}"
+    dest: "{{ init_script[ansible_service_mgr] }}"
+    owner: root
+    group: root
+    mode: "u=rwx,g=rx,o=rx"
+  tags:
+    update_config

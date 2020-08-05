@@ -27,28 +27,8 @@
   file:
     path: "{{ item }}"
     state: directory
-    mode: 0755
+    mode: "u=rwx,g=rx,o=rx"
   loop:
     - "/etc/supervisord"
     - "/etc/supervisord.d"
     - "/etc/supervisor.d"
-
-
-- name: Copy /etc/supervisord.conf
-  copy:
-    src: files/etc/supervisord.conf
-    dest: /etc/supervisord.conf
-    owner: root
-    group: root
-    mode: 0644
-
-
-- name: Copy init script
-  copy:
-    src: files/etc/init.d/supervisord
-    dest: /etc/init.d/supervisord
-    owner: root
-    group: root
-    mode: "u=rwx,g=rx,o=rx"
-  tags:
-    update_config

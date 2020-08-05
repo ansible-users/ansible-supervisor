@@ -4,10 +4,10 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: centos7
-    image: centos:7
-  - name: debian9
-    image: debian:9
+  # - name: centos 7
+  #   image: centos/python-27-centos7:latest
+  - name: debian 9
+    image: python:2.7-stretch
 provisioner:
   name: ansible
   lint:
