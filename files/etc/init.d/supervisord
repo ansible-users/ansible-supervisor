@@ -29,7 +29,7 @@ SUPERVISORD=$PREFIX/bin/supervisord
 SUPERVISORCTL=$PREFIX/bin/supervisorctl
 PIDFILE=/var/run/supervisord.pid
 LOCKFILE=/var/lock/subsys/supervisord
-CONFIGFILE=/etc/supervisord.conf
+CONFIGFILE=/etc/supervisor/supervisord.conf
 
 OPTIONS="-c $CONFIGFILE"
 

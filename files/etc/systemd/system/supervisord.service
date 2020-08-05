@@ -1,12 +1,12 @@
 [Unit]
-Description=Supervisor process control system for UNIX
+Description=Supervisor process control system for Linux
 Documentation=http://supervisord.org
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
-ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
-ExecReload=/usr/bin/supervisorctl $OPTIONS reload
+ExecStart=/usr/local/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+ExecStop=/usr/local/bin/supervisorctl $OPTIONS shutdown
+ExecReload=/usr/local/bin/supervisorctl $OPTIONS reload
 KillMode=process
 Restart=on-failure
 RestartSec=60s

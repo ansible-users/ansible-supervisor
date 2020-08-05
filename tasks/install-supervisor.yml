@@ -29,6 +29,14 @@
     state: directory
     mode: "u=rwx,g=rx,o=rx"
   loop:
-    - "/etc/supervisord"
-    - "/etc/supervisord.d"
-    - "/etc/supervisor.d"
+    - "/etc/supervisor/"
+    - "/etc/supervisor/conf.d"
+
+
+- name: Copy /etc/supervisor/supervisord.conf
+  copy:
+    src: files/etc/supervisor/supervisord.conf
+    dest: /etc/supervisor/supervisord.conf
+    owner: root
+    group: root
+    mode: "644"
