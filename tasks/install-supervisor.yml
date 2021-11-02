@@ -1,4 +1,4 @@
-- name: Install supervisor-{{ version }} by {{ pip_exe }}.
+- name: Install supervisord-{{ version }} by {{ pip_exe }}.
   pip:
     name: supervisor
     version: "{{ version }}"
@@ -30,6 +30,7 @@
     mode: "u=rwx,g=rx,o=rx"
   loop:
     - "/etc/supervisor/"
+    - "/etc/supervisord.d"
     - "/etc/supervisor/conf.d"
 
 

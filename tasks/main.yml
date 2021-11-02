@@ -5,10 +5,12 @@
     path: "/usr/local/bin/supervisord"
   register: supervisor
 
-- import_tasks: install-supervisor.yml
+- name: Install supervisor
+  import_tasks: install-supervisor.yml
   when: not supervisor.stat.exists or not supervisor.stat.executable
 
-- import_tasks: install-service.yml
+- name: Install supervisor-service
+  import_tasks: install-service.yml
 
 - name: Already exists supervisor-{{ version }}.
   debug: msg="Already exists a supervisor in '/usr/local/bin/supervisord'"
