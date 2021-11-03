@@ -2,9 +2,9 @@
 # defaults file for supervisor
 version: '4.2.0'
 python_dir: '/usr/local/opt/python2.7.13'
-pip_exe: '{{ python_dir }}/bin/pip'
-supervisorctl_exe: '{{ python_dir }}/bin/supervisorctl'
-supervisord_exe: '{{ python_dir }}/bin/supervisord'
+pip_bin: '{{ python_dir }}/bin/pip'
+supervisorctl_bin: '{{ python_dir }}/bin/supervisorctl'
+supervisord_bin: '{{ python_dir }}/bin/supervisord'
 pip_index_url: https://pypi.python.org/simple
 init_script:
   init: /etc/init.d/supervisord
