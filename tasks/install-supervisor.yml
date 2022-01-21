@@ -4,23 +4,22 @@
     version: "{{ version }}"
     executable: "{{ pip_bin }}"
     state: present
-    extra_args: --index-url={{ pip_index_url }}
 
 
-- name: Link to /usr/local/bin/supervisorctl
-  file:
-    src: "{{ supervisorctl_bin }}"
-    dest: /usr/local/bin/supervisorctl
-    state: link
-    force: yes
+# - name: Link to /usr/local/bin/supervisorctl
+#   file:
+#     src: "{{ supervisorctl_bin }}"
+#     dest: /usr/local/bin/supervisorctl
+#     state: link
+#     force: yes
 
 
-- name: Link to /usr/local/bin/supervisord
-  file:
-    src: "{{ supervisord_bin }}"
-    dest: /usr/local/bin/supervisord
-    state: link
-    force: yes
+# - name: Link to /usr/local/bin/supervisord
+#   file:
+#     src: "{{ supervisord_bin }}"
+#     dest: /usr/local/bin/supervisord
+#     state: link
+#     force: yes
 
 
 - name: Initializing config directories

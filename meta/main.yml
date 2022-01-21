@@ -1,6 +1,6 @@
 galaxy_info:
   author: cupen
-  description: Install supervisor by python2.7 with pip2.7.
+  description: Install supervisor with python3.6+
   company: freer
   license: WTFPL
   min_ansible_version: 2.0
