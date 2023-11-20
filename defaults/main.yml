@@ -1,11 +1,22 @@
 ---
-# defaults file for supervisor
-version: '4.2.0'
-python_dir: '/usr/local'
-pip_bin: '{{ python_dir }}/bin/pip'
-supervisorctl_bin: '{{ python_dir }}/bin/supervisorctl'
-supervisord_bin: '{{ python_dir }}/bin/supervisord'
+version: '4.2.5'
+python_dir: '/usr'
+venv_dir: "/usr/local/opt/supervisor-{{ version}}"
+venv_bin: "python3 -m venv"
+
+# python_dir: '/usr/local'
+# venv_command: "-m venv"
+# venv_python: "python3.6"
+
+pip_bin: '{{ python_dir }}/bin/pip3'
+# supervisorctl_bin: '{{ python_dir }}/bin/supervisorctl'
+# supervisord_bin: '{{ python_dir }}/bin/supervisord'
 pip_index_url: https://pypi.python.org/simple
 init_script:
   init: /etc/init.d/supervisord
   systemd:  /etc/systemd/system/supervisord.service
+
+supervisor_config_dirs:
+  - "/etc/supervisor/"
+  - "/etc/supervisor/conf.d"
+  - "/etc/supervisor.d"

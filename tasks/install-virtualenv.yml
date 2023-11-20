@@ -1,0 +1,9 @@
+- name: Create directory for python virtual environment. 
+  file:
+    path: "/usr/local/opt"
+    state: directory
+    mode: "u=rwx,g=rx,o=rx"
+
+
+- name: Create python virtual environment. 
+  shell: "{{ venv_bin }} {{ venv_dir }}"

@@ -1,10 +1,9 @@
-- name: Install supervisord-{{ version }} by {{ pip_bin }}.
-  pip:
-    name: supervisor
-    version: "{{ version }}"
-    executable: "{{ pip_bin }}"
-    state: present
-
+# - name: Install supervisord-{{ version }} by {{ pip_bin }}.
+#   pip:
+#     name: supervisor
+#     version: "{{ version }}"
+#     executable: "{{ pip_bin }}"
+#     state: present
 
 # - name: Link to /usr/local/bin/supervisorctl
 #   file:
@@ -22,15 +21,48 @@
 #     force: yes
 
 
+- name: Install supervisor-{{ version }} in virtual environment({{ venv_dir }}).
+  pip:
+    name: supervisor
+    version: "{{ version }}"
+    executable: "{{ venv_dir }}/bin/pip"
+    state: present
+    extra_args: "-i {{ pip_index_url }}"
+
+
+# - name: Install supervisor-{{ version }} in virtual environment({{ venv_dir }}).
+#   pip:
+#     name: supervisor
+#     version: "{{ version }}"
+#     executable: "{{ pip_bin }}"
+#     state: present
+#     virtualenv: "{{ venv_dir }}"
+#     virtualenv_command: "{{ venv_command }}"
+#     virtualenv_python: "{{ venv_python }}"
+
+
+- name: Link to /usr/local/bin/supervisorctl
+  file:
+    src: "{{ venv_dir }}/bin/supervisorctl"
+    dest: /usr/local/bin/supervisorctl
+    state: link
+    force: yes
+
+
+- name: Link to /usr/local/bin/supervisord
+  file:
+    src: "{{ venv_dir }}/bin/supervisord"
+    dest: /usr/local/bin/supervisord
+    state: link
+    force: yes
+
+
 - name: Initializing config directories
   file:
     path: "{{ item }}"
     state: directory
     mode: "u=rwx,g=rx,o=rx"
-  loop:
-    - "/etc/supervisor/"
-    - "/etc/supervisord.d"
-    - "/etc/supervisor/conf.d"
+  loop: "{{ supervisor_config_dirs }}"
 
 
 - name: Copy /etc/supervisor/supervisord.conf

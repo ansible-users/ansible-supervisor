@@ -5,6 +5,10 @@
     path: "/usr/local/bin/supervisord"
   register: supervisor
 
+- name: Create python virtual environment. 
+  import_tasks: install-supervisor.yml
+  when: not supervisor.stat.exists or not supervisor.stat.executable
+
 - name: Install supervisor
   import_tasks: install-supervisor.yml
   when: not supervisor.stat.exists or not supervisor.stat.executable
